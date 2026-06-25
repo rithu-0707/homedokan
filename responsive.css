@@ -1,0 +1,477 @@
+/* ============================================================
+   HomeDokan – Single Responsive Stylesheet  (v2025-clean)
+   Covers: mobile (≤575px) · tablet (576–991px) · laptop (992px+)
+   ============================================================ */
+
+/* ── 1. Base resets ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    min-width: 320px;
+}
+
+img, video, iframe, svg {
+    max-width: 100%;
+    display: block;
+}
+
+section, main, header, footer {
+    max-width: 100vw;
+}
+
+.row > * { min-width: 0; }
+
+p, li, a, span, small, label, button,
+input, textarea, select,
+h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: anywhere;
+}
+
+/* ── 2. Typography – fluid scale ── */
+.display-3 { font-size: clamp(2.1rem, 5vw, 4.5rem); line-height: 1.08; }
+.display-4 { font-size: clamp(1.9rem, 4vw, 3.5rem); line-height: 1.1;  }
+.display-5 { font-size: clamp(1.7rem, 3.5vw, 3rem); line-height: 1.12; }
+.lead      { font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.6; }
+
+/* ── 3. Navbar ── */
+.navbar { width: 100%; }
+
+.navbar-brand {
+    font-size: clamp(1.2rem, 6vw, 2rem) !important;
+}
+
+.navbar .container,
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: .75rem;
+}
+
+.navbar-toggler {
+    flex: 0 0 auto;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: .35rem;
+}
+
+.navbar .btn.rounded-circle {
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 2.75rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    flex: 0 0 auto;
+}
+
+.navbar .navbar-nav { align-items: center; gap: .15rem; }
+.navbar .nav-link   { line-height: 1.2; font-size: .95rem; }
+
+.offcanvas { max-width: 90vw; }
+.offcanvas-body .nav-link {
+    padding-top: .55rem;
+    padding-bottom: .55rem;
+}
+
+/* hide desktop collapse on tablet/mobile */
+@media (max-width: 991.98px) {
+    .navbar .collapse.navbar-collapse { display: none !important; }
+}
+
+/* ── 4. Cart badge ── */
+.cart-count {
+    min-width: 1.35rem;
+    min-height: 1.35rem;
+    font-size: .72rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── 5. Buttons & forms ── */
+.btn, .form-control, .form-select { min-height: 2.5rem; }
+.btn { white-space: normal; }
+.btn.rounded-pill { border-radius: 999px !important; }
+
+/* ── 6. Cards ── */
+.card { border-radius: .75rem; overflow: hidden; }
+.card-body, .card, footer, .offcanvas-body { word-wrap: break-word; }
+
+.product-card,
+.category-card,
+.offer-card,
+.about-feature-cards .card,
+.contact-info-cards .card {
+    height: 100%;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.product-card:hover,
+.category-card:hover,
+.offer-card:hover,
+.about-feature-cards .card:hover,
+.contact-info-cards .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.12) !important;
+}
+
+.about-feature-cards .card,
+.contact-info-cards .card { border-radius: .85rem; }
+
+.about-feature-cards h1,
+.contact-info-cards h1 {
+    color: #198754;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.product-card .btn,
+.card .btn,
+.cart-page .btn { min-height: 2.5rem; }
+
+.product-card .ratio,
+.card .ratio { overflow: hidden; }
+
+/* ── 7. Images – responsive classes (replaces all inline heights) ── */
+
+/* Home – Shop By Category */
+.home-cat-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Home – Deal of the Week (inside .p-3 wrapper) */
+.home-product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+/* Categories page & best-sellers */
+.cat-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Offers page */
+.offer-img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+/* all other card-img-top (shop, category sub-pages) */
+.card-img-top {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* hero images on category sub-pages (ratio containers) */
+.ratio img,
+.ratio-4x3 img,
+.ratio-16x9 img,
+.ratio-1x1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ── 8. Top dark bar ── */
+.bg-dark .row.g-2, .bg-dark .row.g-3 { row-gap: .5rem !important; }
+.bg-dark .input-group { min-width: 0; }
+
+/* ── 9. Footer ── */
+footer a, footer p { overflow-wrap: anywhere; }
+footer { text-align: center; }
+
+/* ── 10. Cart page ── */
+.cart-item-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: #f8f9fa;
+}
+
+.quantity-control { flex-wrap: nowrap; }
+.quantity-control .btn {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border-radius: 50%;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.cart-float-message {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1080;
+    background: #198754;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.18);
+}
+
+/* ── 11. Toast ── */
+.toast-container { z-index: 1090; }
+
+/* ── 12. Sticky sidebar ── */
+.sticky-lg-top { top: 95px; }
+
+/* ── 13. Wide screens ── */
+@media (min-width: 1400px) {
+    .container { max-width: 1240px; }
+}
+
+@media (max-width: 1199.98px) {
+    .navbar-brand { font-size: 1.55rem !important; }
+    .navbar .nav-link { font-size: .92rem; }
+}
+
+/* ── 14. TABLET  576–991px ── */
+@media (max-width: 991.98px) {
+
+    .display-3 { font-size: 2.6rem; }
+    .display-4 { font-size: 2.2rem; }
+    .lead      { font-size: 1.05rem; }
+
+    section, main, header { text-align: center; }
+
+    .btn-lg { font-size: 1rem; padding: .7rem 1rem; }
+
+    /* images */
+    .home-cat-img    { height: 190px; }
+    .home-product-img{ height: 175px; }
+    .cat-card-img    { height: 175px; }
+    .offer-img       { height: 180px; }
+
+    /* hero ratio images */
+    header .ratio, section .ratio {
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* offers hero – reduce min-height */
+    section[style*="min-height"] {
+        min-height: 320px !important;
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .bg-dark .container,
+    .bg-dark .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .bg-dark .row > [class*="col-"] { text-align: center !important; }
+
+    footer .row > [class*="col-"] { text-align: center; }
+
+    .sticky-lg-top { position: static !important; }
+
+    .cart-header .d-flex { justify-content: center !important; }
+}
+
+/* ── 15. MOBILE  ≤575px ── */
+@media (max-width: 575.98px) {
+
+    body { font-size: .96rem; }
+
+    .container, .container-fluid {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .row { --bs-gutter-x: 1rem; }
+
+    header, section, main { scroll-margin-top: 5rem; }
+
+    /* typography */
+    .display-3 { font-size: 2.1rem; }
+    .display-4, .display-5 { font-size: 1.85rem; }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.3rem; }
+    .lead { font-size: 1rem; line-height: 1.55; }
+
+    /* spacing */
+    .py-5 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+    .my-5 { margin-top: 2rem !important; margin-bottom: 2rem !important; }
+    .card-body, .card.p-4, .p-4 { padding: 1rem !important; }
+
+    /* images */
+    .home-cat-img    { height: clamp(150px, 44vw, 200px); }
+    .home-product-img{ height: clamp(140px, 42vw, 185px); }
+    .cat-card-img    { height: clamp(140px, 42vw, 185px); }
+    .offer-img       { height: clamp(145px, 43vw, 190px); }
+
+    /* offers hero */
+    section[style*="min-height"] {
+        min-height: 260px !important;
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+        align-items: flex-start !important;
+    }
+
+    /* shop hero circle */
+    header .ratio.ratio-1x1 {
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* category circle images on index.html */
+    .category-card { padding: 12px !important; }
+    .category-card img {
+        width: 72px !important;
+        height: 72px !important;
+        max-width: 72px !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+        margin: 0 auto;
+    }
+
+    /* hide search bar in top bar on mobile */
+    .bg-dark .col-12.col-lg-5 { display: none !important; }
+
+    /* navbar */
+    .navbar-brand {
+        font-size: clamp(1.2rem, 7vw, 1.5rem) !important;
+        max-width: calc(100vw - 7rem);
+        line-height: 1.1;
+    }
+    .navbar .btn, .navbar-toggler, .offcanvas .btn-close { max-width: none; }
+    .offcanvas { width: min(22rem, 90vw) !important; }
+    .offcanvas-header, .offcanvas-body { padding-left: 1rem; padding-right: 1rem; }
+
+    /* buttons full-width */
+    .btn, .btn-lg,
+    .product-card .btn,
+    .card-body > .btn,
+    .card-body > a.btn,
+    main .btn-lg, section .btn-lg,
+    .cart-header .btn,
+    #cartSummary .btn,
+    #emptyCart .btn {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* footer – always stack columns */
+    footer .col-md-4,
+    footer .col-md-3,
+    footer .col-md-2,
+    footer .col-sm-6 {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    footer { margin-top: 2rem !important; }
+    footer .container-fluid {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    /* promo banner images */
+    .card .row.g-0 .col-12.col-md-6:last-child img.img-fluid {
+        max-height: 170px;
+        object-fit: contain;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* cart */
+    .cart-float-message {
+        left: .75rem; right: .75rem; bottom: .75rem;
+        text-align: center;
+    }
+    .cart-header .btn, #cartSummary .btn, #emptyCart .btn { max-width: none; }
+    .cart-item-img { min-height: 92px; }
+    .quantity-control .btn {
+        width: 2rem !important;
+        max-width: 2rem;
+        min-height: 2rem;
+    }
+    #shoppingCart { width: 100vw; }
+
+    /* input group stack */
+    .input-group {
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .input-group > .form-select,
+    .input-group > .form-control,
+    .input-group > .btn {
+        width: 100%;
+        border-radius: .375rem !important;
+    }
+
+    /* toast */
+    .toast-container {
+        left: .75rem !important;
+        right: .75rem !important;
+        bottom: .75rem !important;
+        padding: 0 !important;
+    }
+    .toast { width: 100%; }
+
+    /* card radius */
+    .card, .cart-header, .cart-item-card,
+    #cartSummary, #emptyCart { border-radius: .85rem !important; }
+
+    .bg-dark.py-2 { font-size: .9rem; }
+}
+
+/* ── 16. Very small phones ≤390px ── */
+@media (max-width: 390px) {
+
+    .navbar-brand {
+        max-width: calc(100vw - 6.5rem);
+        font-size: 1.1rem !important;
+    }
+
+    .navbar .btn.rounded-circle, .navbar-toggler {
+        width: 2.4rem;
+        height: 2.4rem;
+        min-width: 2.4rem;
+    }
+
+    .cart-count { min-width: 1.1rem; min-height: 1.1rem; font-size: .62rem; }
+
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.4rem; }
+
+    .home-cat-img     { height: 130px; }
+    .home-product-img { height: 120px; }
+    .cat-card-img     { height: 120px; }
+    .offer-img        { height: 125px; }
+
+    .category-card img {
+        width: 60px !important;
+        height: 60px !important;
+        max-width: 60px !important;
+    }
+    .category-card h6 { font-size: .72rem; }
+}

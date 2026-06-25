@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - HomeDokan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{max-width:100%;overflow-x:hidden}
+    body{min-width:320px}
+    img{max-width:100%;height:auto;display:block}
+    .product-card{transition:transform .2s,box-shadow .2s}
+    .product-card:hover{transform:translateY(-4px);box-shadow:0 1rem 2rem rgba(0,0,0,.12)!important}
+    .ratio img{width:100%;height:100%;object-fit:cover}
+    @media(max-width:991.98px){
+      .navbar .collapse.navbar-collapse{display:none!important}
+      .bg-dark .col-12.col-lg-5{display:none!important}
+      .col-lg-5 .ratio.ratio-1x1{max-width:360px;margin:0 auto}
+    }
+    @media(max-width:575.98px){
+      .col-lg-5 .ratio.ratio-1x1{max-width:240px}
+      footer .col-md-4,footer .col-md-3,footer .col-md-2{width:100%!important;flex:0 0 100%!important;max-width:100%!important}
+      .btn{white-space:normal}
+      .d-flex.flex-wrap.justify-content-center.gap-2 a{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <!-- TOP BLACK BAR -->
+
+    <div class="bg-dark text-white py-2">
+    <div class="container">
+
+        <div class="row g-2 text-center text-lg-start align-items-center">
+
+            <div class="col-12 col-lg-2">
+                &#9742; +880 1717-761-261
+            </div>
+
+            <div class="col-12 col-lg-3">
+                &#9993; info@homedokan.com
+            </div>
+
+            <div class="col-12 col-lg-5">
+                <div class="input-group">
+                   
+
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Search...">
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-2 d-none d-lg-block text-end">
+                My Account | INR
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div id="global-navbar"></div>
+<nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-2" href="index.html"><span class="text-warning">HOME</span><span class="text-success">DOKAN</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Open menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto">
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-bold active text-success" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+          <ul class="dropdown-menu shadow-sm border-0">
+            <li><a class="dropdown-item fw-semibold text-success" href="shop.html">All Products</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="vegetables.html">Vegetables</a></li>
+            <li><a class="dropdown-item" href="fruits.html">Fruits</a></li>
+            <li><a class="dropdown-item" href="dairy-products.html">Dairy Products</a></li>
+            <li><a class="dropdown-item" href="cleaning-essentials.html">Cleaning Essentials</a></li>
+            <li><a class="dropdown-item" href="cooking-essentials.html">Cooking Essentials</a></li>
+            <li><a class="dropdown-item" href="bakery.html">Bakery</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="categories.html">Categories</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="offers.html">Offers</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="contact.html">Contact Us</a></li>
+        <li class="nav-item"><button class="nav-link fw-bold text-danger bg-transparent border-0 signout-link d-none" type="button" onclick="signOut()">Sign Out</button></li>
+      </ul>
+      <a class="btn btn-outline-success position-relative rounded-circle" href="cart.html" aria-label="Open cart">
+        <span class="d-inline-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1.5 7A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.49-.402L1.61 2H.5a.5.5 0 0 1-.5-.5zM4.415 10h8.18l1.286-6H3.14l1.275 6z"/>
+  <path d="M6 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm7 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg></span>
+        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h5 class="fw-bold"><span class="text-warning">HOME</span><span class="text-success">DOKAN</span></h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      
+      <li><a class="nav-link fw-bold text-success" href="shop.html">All Products</a></li>
+      <li class="ms-3"><a class="nav-link" href="vegetables.html">Vegetables</a></li>
+      <li class="ms-3"><a class="nav-link" href="fruits.html">Fruits</a></li>
+      <li class="ms-3"><a class="nav-link" href="dairy-products.html">Dairy Products</a></li>
+      <li class="ms-3"><a class="nav-link" href="cleaning-essentials.html">Cleaning Essentials</a></li>
+      <li class="ms-3"><a class="nav-link" href="cooking-essentials.html">Cooking Essentials</a></li>
+      <li class="ms-3"><a class="nav-link" href="bakery.html">Bakery</a></li>
+      <li><a class="nav-link fw-bold" href="categories.html">Categories</a></li>
+      <li><a class="nav-link fw-bold" href="offers.html">Offers</a></li>
+      <li><a class="nav-link fw-bold" href="about.html">About Us</a></li>
+      <li><a class="nav-link fw-bold" href="contact.html">Contact Us</a></li>
+      <li><button class="nav-link fw-bold text-danger bg-transparent border-0 signout-link d-none" type="button" onclick="signOut()">Sign Out</button></li>
+    </ul>
+    <hr>
+    <a class="btn btn-success w-100 d-flex align-items-center justify-content-center gap-2" href="cart.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1.5 7A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.49-.402L1.61 2H.5a.5.5 0 0 1-.5-.5zM4.415 10h8.18l1.286-6H3.14l1.275 6z"/>
+  <path d="M6 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm7 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg>
+      <span>View Cart</span>
+      <span class="cart-count badge text-bg-light ms-1 d-none">0</span>
+    </a>
+  </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="cartToast" class="toast border-0 text-bg-success">
+    <div class="d-flex">
+      <div class="toast-body"><strong id="toastProductName"></strong> added to your cart.</div>
+      <button class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+<header class="bg-dark text-white py-5">
+  <div class="container py-lg-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <span class="badge rounded-pill text-bg-warning mb-3">THE COMPLETE HOMEDOKAN COLLECTION</span>
+        <h1 class="display-3 fw-bold">Everything your home needs, all in one shop.</h1>
+        <p class="lead text-white-50 my-4">Shop fresh food, pantry staples, bakery favourites and cleaning essentials in one convenient place.</p>
+        <a href="#all-products" class="btn btn-success btn-lg rounded-pill px-4 me-sm-2 mb-2 mb-sm-0">Shop All 48 Products</a>
+        <a href="offers.html" class="btn btn-outline-light btn-lg rounded-pill px-4">View Offers</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="ratio ratio-1x1"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" class="w-100 h-100 object-fit-cover rounded-circle border border-5 border-success shadow" alt="All grocery products"></div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="py-4 bg-success-subtle">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-center gap-2"><a href="vegetables.html" class="btn btn-light border rounded-pill px-4">Vegetables</a><a href="fruits.html" class="btn btn-light border rounded-pill px-4">Fruits</a><a href="dairy-products.html" class="btn btn-light border rounded-pill px-4">Dairy Products</a><a href="cleaning-essentials.html" class="btn btn-light border rounded-pill px-4">Cleaning Essentials</a><a href="cooking-essentials.html" class="btn btn-light border rounded-pill px-4">Cooking Essentials</a><a href="bakery.html" class="btn btn-light border rounded-pill px-4">Bakery</a></div>
+  </div>
+</section>
+<main id="all-products" class="py-5">
+  <div class="container py-lg-4">
+    <div class="text-center mb-5">
+      <p class="text-success fw-bold mb-2">ALL SIX CATEGORIES</p>
+      <h2 class="fw-bold">All Products</h2>
+      <p class="text-secondary">Browse all 48 HomeDokan products and add your favourites to the cart.</p>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4"><div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Tomatoes"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Vegetables</small>
+      <h5 class="card-title">Tomatoes</h5>
+      <p class="text-success fw-bold fs-5">&#8377;50 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Potatoes"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Vegetables</small>
+      <h5 class="card-title">Potatoes</h5>
+      <p class="text-success fw-bold fs-5">&#8377;45 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1633380110125-f6e685676160?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2Fycm90fGVufDB8fDB8fHww" class="w-100 h-100 object-fit-cover rounded-top" alt="Carrots"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Vegetables</small>
+      <h5 class="card-title">Carrots</h5>
+      <p class="text-success fw-bold fs-5">&#8377;65 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://plus.unsplash.com/premium_photo-1702403157830-9df749dc6c1e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJvY29sbGl8ZW58MHx8MHx8fDA%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Broccoli"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Vegetables</small>
+      <h5 class="card-title">Broccoli</h5>
+      <p class="text-success fw-bold fs-5">&#8377;85 <small class="text-secondary fw-normal">/ piece</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1668295037469-8b0e8d11cd2a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVkJTIwb25pb258ZW58MHx8MHx8fDA%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Red Onions"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Vegetables</small>
+      <h5 class="card-title">Red Onions</h5>
+      <p class="text-success fw-bold fs-5">&#8377;55 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Bell Peppers"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Vegetables</small>
+      <h5 class="card-title">Bell Peppers</h5>
+      <p class="text-success fw-bold fs-5">&#8377;110 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1566842600175-97dca489844f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F1bGlmbG93ZXJ8ZW58MHx8MHx8fDA%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Cauliflower"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Vegetables</small>
+      <h5 class="card-title">Cauliflower</h5>
+      <p class="text-success fw-bold fs-5">&#8377;70 <small class="text-secondary fw-normal">/ piece</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Spinach"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Vegetables</small>
+      <h5 class="card-title">Spinach</h5>
+      <p class="text-success fw-bold fs-5">&#8377;40 <small class="text-secondary fw-normal">/ bunch</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Red Apples"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Fruits</small>
+      <h5 class="card-title">Red Apples</h5>
+      <p class="text-success fw-bold fs-5">&#8377;120 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1587132137056-bfbf0166836e?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Bananas"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Fruits</small>
+      <h5 class="card-title">Bananas</h5>
+      <p class="text-success fw-bold fs-5">&#8377;60 <small class="text-secondary fw-normal">/ dozen</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b3JhbmdlfGVufDB8fDB8fHww" class="w-100 h-100 object-fit-cover rounded-top" alt="Oranges"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Fruits</small>
+      <h5 class="card-title">Oranges</h5>
+      <p class="text-success fw-bold fs-5">&#8377;90 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1621409443141-46c42dc0afb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGluZWFwcGxlfGVufDB8fDB8fHww" class="w-100 h-100 object-fit-cover rounded-top" alt="Pineapple"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Fruits</small>
+      <h5 class="card-title">Pineapple</h5>
+      <p class="text-success fw-bold fs-5">&#8377;95 <small class="text-secondary fw-normal">/ piece</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Strawberries"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Fruits</small>
+      <h5 class="card-title">Strawberries</h5>
+      <p class="text-success fw-bold fs-5">&#8377;160 <small class="text-secondary fw-normal">/ box</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://media.istockphoto.com/id/489520104/photo/green-grape-isolated-on-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=wgd0VVD_5P7LNMmnstGQ4FaG1FsLaIwCSxkyfuxXsNo=" class="w-100 h-100 object-fit-cover rounded-top" alt="Green Grapes"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Fruits</small>
+      <h5 class="card-title">Green Grapes</h5>
+      <p class="text-success fw-bold fs-5">&#8377;130 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1563114773-84221bd62daa?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Watermelon"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Fruits</small>
+      <h5 class="card-title">Watermelon</h5>
+      <p class="text-success fw-bold fs-5">&#8377;80 <small class="text-secondary fw-normal">/ piece</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Mangoes"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Fruits</small>
+      <h5 class="card-title">Mangoes</h5>
+      <p class="text-success fw-bold fs-5">&#8377;150 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1634141510639-d691d86f47be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWlsa3xlbnwwfHwwfHx8MA%3D%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Fresh Milk"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Dairy Products</small>
+      <h5 class="card-title">Fresh Milk</h5>
+      <p class="text-success fw-bold fs-5">&#8377;55 <small class="text-secondary fw-normal">/ litre</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Cheddar Cheese"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Dairy Products</small>
+      <h5 class="card-title">Cheddar Cheese</h5>
+      <p class="text-success fw-bold fs-5">&#8377;180 <small class="text-secondary fw-normal">/ pack</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1587486913049-53fc88980cfc?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Farm Eggs"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Dairy Products</small>
+      <h5 class="card-title">Farm Eggs</h5>
+      <p class="text-success fw-bold fs-5">&#8377;75 <small class="text-secondary fw-normal">/ 6 pieces</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://media.istockphoto.com/id/927134424/photo/plain-yogurt-is-super-healthy.webp?a=1&b=1&s=612x612&w=0&k=20&c=PsefnvbiUmHJeUQSbFSCH2brPWhgPOcGodSfFeYk_M4=" class="w-100 h-100 object-fit-cover rounded-top" alt="Natural Yogurt"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Dairy Products</small>
+      <h5 class="card-title">Natural Yogurt</h5>
+      <p class="text-success fw-bold fs-5">&#8377;60 <small class="text-secondary fw-normal">/ cup</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Salted Butter"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Dairy Products</small>
+      <h5 class="card-title">Salted Butter</h5>
+      <p class="text-success fw-bold fs-5">&#8377;65 <small class="text-secondary fw-normal">/ pack</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://media.istockphoto.com/id/1337509104/photo/homemade-cottage-cheese-diced-on-a-vintage-kitchen-board-simple-country-food-selective-focus.webp?a=1&b=1&s=612x612&w=0&k=20&c=QSnA3rwwRsjVPnpLnkPzwEy6dKh1ZqcMbwr_qY3NsDo=" class="w-100 h-100 object-fit-cover rounded-top" alt="Fresh Paneer"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Dairy Products</small>
+      <h5 class="card-title">Fresh Paneer</h5>
+      <p class="text-success fw-bold fs-5">&#8377;120 <small class="text-secondary fw-normal">/ pack</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://media.istockphoto.com/id/515777808/photo/yogurt.webp?a=1&b=1&s=612x612&w=0&k=20&c=kJZR6kAUsO6h6v9lsqWzP_Xnh3Dqo3ZumrGohW3YhRk=" class="w-100 h-100 object-fit-cover rounded-top" alt="Fresh Cream"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Dairy Products</small>
+      <h5 class="card-title">Fresh Cream</h5>
+      <p class="text-success fw-bold fs-5">&#8377;90 <small class="text-secondary fw-normal">/ pack</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1630409346699-79481a79db52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1dHRlciUyMG1pbGt8ZW58MHx8MHx8fDA%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Buttermilk"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Dairy Products</small>
+      <h5 class="card-title">Buttermilk</h5>
+      <p class="text-success fw-bold fs-5">&#8377;35 <small class="text-secondary fw-normal">/ bottle</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1704819177121-cd91a0d4351c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZGlzaCUyMHdhc2hpbmclMjBsaXF1aWR8ZW58MHx8MHx8fDA%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Dishwashing Liquid"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cleaning Essentials</small>
+      <h5 class="card-title">Dishwashing Liquid</h5>
+      <p class="text-success fw-bold fs-5">&#8377;95 <small class="text-secondary fw-normal">/ bottle</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Laundry Detergent"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cleaning Essentials</small>
+      <h5 class="card-title">Laundry Detergent</h5>
+      <p class="text-success fw-bold fs-5">&#8377;210 <small class="text-secondary fw-normal">/ pack</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Floor Cleaner"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cleaning Essentials</small>
+      <h5 class="card-title">Floor Cleaner</h5>
+      <p class="text-success fw-bold fs-5">&#8377;140 <small class="text-secondary fw-normal">/ bottle</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1584483720412-ce931f4aefa8?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Hand Wash"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cleaning Essentials</small>
+      <h5 class="card-title">Hand Wash</h5>
+      <p class="text-success fw-bold fs-5">&#8377;85 <small class="text-secondary fw-normal">/ bottle</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1610389473058-fd68ad1d8bac?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNsZWFuaW5nJTIwc3Bhcnl8ZW58MHx8MHx8fDA%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Cleaning Spray"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cleaning Essentials</small>
+      <h5 class="card-title">Cleaning Spray</h5>
+      <p class="text-success fw-bold fs-5">&#8377;120 <small class="text-secondary fw-normal">/ bottle</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1627905646269-7f034dcc5738?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Scrub Sponges"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cleaning Essentials</small>
+      <h5 class="card-title">Scrub Sponges</h5>
+      <p class="text-success fw-bold fs-5">&#8377;55 <small class="text-secondary fw-normal">/ pack</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Trash Bags"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cleaning Essentials</small>
+      <h5 class="card-title">Trash Bags</h5>
+      <p class="text-success fw-bold fs-5">&#8377;80 <small class="text-secondary fw-normal">/ roll</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1550963295-019d8a8a61c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9pbGV0JTIwY2xlYW5lcnxlbnwwfHwwfHx8MA%3D%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Toilet Cleaner"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cleaning Essentials</small>
+      <h5 class="card-title">Toilet Cleaner</h5>
+      <p class="text-success fw-bold fs-5">&#8377;110 <small class="text-secondary fw-normal">/ bottle</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Basmati Rice"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cooking Essentials</small>
+      <h5 class="card-title">Basmati Rice</h5>
+      <p class="text-success fw-bold fs-5">&#8377;140 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Cooking Oil"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cooking Essentials</small>
+      <h5 class="card-title">Cooking Oil</h5>
+      <p class="text-success fw-bold fs-5">&#8377;160 <small class="text-secondary fw-normal">/ litre</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Wheat Flour"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cooking Essentials</small>
+      <h5 class="card-title">Wheat Flour</h5>
+      <p class="text-success fw-bold fs-5">&#8377;65 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1672660589379-891ab59588a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVkJTIwbGVudGlsc3xlbnwwfHwwfHx8MA%3D%3D0" class="w-100 h-100 object-fit-cover rounded-top" alt="Red Lentils"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cooking Essentials</small>
+      <h5 class="card-title">Red Lentils</h5>
+      <p class="text-success fw-bold fs-5">&#8377;120 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1634612831148-03a8550e1d52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3VnYXJ8ZW58MHx8MHx8fDA%3D80" class="w-100 h-100 object-fit-cover rounded-top" alt="Sugar"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cooking Essentials</small>
+      <h5 class="card-title">Sugar</h5>
+      <p class="text-success fw-bold fs-5">&#8377;50 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://plus.unsplash.com/premium_photo-1726072356923-bf1a9f8faeb0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9jayUyMHNhbHR8ZW58MHx8MHx8fDA%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Rock Salt"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cooking Essentials</small>
+      <h5 class="card-title">Rock Salt</h5>
+      <p class="text-success fw-bold fs-5">&#8377;35 <small class="text-secondary fw-normal">/ kg</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWl4ZWQlMjBzcGljZXN8ZW58MHx8MHx8fDA%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Mixed Spices"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cooking Essentials</small>
+      <h5 class="card-title">Mixed Spices</h5>
+      <p class="text-success fw-bold fs-5">&#8377;95 <small class="text-secondary fw-normal">/ pack</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9uZXl8ZW58MHx8MHx8fDA%3D" class="w-100 h-100 object-fit-cover rounded-top" alt="Natural Honey"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Cooking Essentials</small>
+      <h5 class="card-title">Natural Honey</h5>
+      <p class="text-success fw-bold fs-5">&#8377;220 <small class="text-secondary fw-normal">/ jar</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Whole Wheat Bread"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Bakery</small>
+      <h5 class="card-title">Whole Wheat Bread</h5>
+      <p class="text-success fw-bold fs-5">&#8377;45 <small class="text-secondary fw-normal">/ loaf</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Butter Croissant"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Bakery</small>
+      <h5 class="card-title">Butter Croissant</h5>
+      <p class="text-success fw-bold fs-5">&#8377;55 <small class="text-secondary fw-normal">/ piece</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Chocolate Muffin"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Bakery</small>
+      <h5 class="card-title">Chocolate Muffin</h5>
+      <p class="text-success fw-bold fs-5">&#8377;65 <small class="text-secondary fw-normal">/ piece</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Fresh Baguette"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Bakery</small>
+      <h5 class="card-title">Fresh Baguette</h5>
+      <p class="text-success fw-bold fs-5">&#8377;75 <small class="text-secondary fw-normal">/ loaf</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Cinnamon Roll"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Bakery</small>
+      <h5 class="card-title">Cinnamon Roll</h5>
+      <p class="text-success fw-bold fs-5">&#8377;80 <small class="text-secondary fw-normal">/ piece</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Chocolate Cake"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Bakery</small>
+      <h5 class="card-title">Chocolate Cake</h5>
+      <p class="text-success fw-bold fs-5">&#8377;450 <small class="text-secondary fw-normal">/ cake</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Glazed Donuts"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Bakery</small>
+      <h5 class="card-title">Glazed Donuts</h5>
+      <p class="text-success fw-bold fs-5">&#8377;120 <small class="text-secondary fw-normal">/ box</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100 border-0 shadow-sm product-card">
+    <div class="ratio ratio-4x3 bg-light"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="w-100 h-100 object-fit-cover rounded-top" alt="Oat Cookies"></div>
+    <div class="card-body d-flex flex-column">
+      <small class="text-success text-uppercase fw-semibold mb-2">Bakery</small>
+      <h5 class="card-title">Oat Cookies</h5>
+      <p class="text-success fw-bold fs-5">&#8377;140 <small class="text-secondary fw-normal">/ pack</small></p>
+      <button class="btn btn-success add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div></div>
+  </div>
+</main>
+<footer class="bg-dark text-white pt-5 pb-3 mt-5 w-100">
+  <div class="container-fluid px-4 px-lg-5">
+    <div class="row g-4">
+      <div class="col-md-4"><h3 class="fw-bold"><span class="text-warning">HOME</span><span class="text-success">DOKAN</span></h3><p class="mt-3">Fresh groceries and daily essentials delivered directly to your doorstep.</p></div>
+      <div class="col-md-2"><h5 class="fw-bold">Quick Links</h5><p><a href="index.html" class="text-white text-decoration-none">Home</a></p><p><a href="about.html" class="text-white text-decoration-none">About Us</a></p><p><a href="shop.html" class="text-white text-decoration-none">Products</a></p><p><a href="contact.html" class="text-white text-decoration-none">Contact</a></p></div>
+      <div class="col-md-3"><h5 class="fw-bold">Categories</h5><p>Vegetables</p><p>Fresh Fruits</p><p>Milk &amp; Dairy</p><p>Bakery</p></div>
+      <div class="col-md-3"><h5 class="fw-bold">Contact Us</h5><p>&#9742; +880 1717-761-261</p><p>&#9993; info@homedokan.com</p><p>&#128205; Coimbatore, India</p></div>
+    </div>
+    <hr>
+    <p class="text-center mb-0">&copy; 2026 HomeDokan. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="cart.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
+
+
+
